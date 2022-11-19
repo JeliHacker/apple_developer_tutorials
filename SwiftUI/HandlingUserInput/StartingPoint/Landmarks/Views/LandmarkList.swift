@@ -1,3 +1,10 @@
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+A view showing a list of landmarks.
+*/
+
 import SwiftUI
 
 struct LandmarkList: View {
@@ -9,17 +16,15 @@ struct LandmarkList: View {
                 } label: {
                     LandmarkRow(landmark: landmark)
                 }
-                
             }
             .navigationTitle("Landmarks")
         }
-        
     }
 }
 
 struct LandmarkList_Previews: PreviewProvider {
     static var previews: some View {
-        ForEach(["iPhone SE (2nd generation)", "iPhone XS Max", "iPad (10th generation)"], id: \.self) { deviceName in
+        ForEach(["iPhone SE (2nd generation)", "iPhone XS Max"], id: \.self) { deviceName in
             LandmarkList()
                 .previewDevice(PreviewDevice(rawValue: deviceName))
                 .previewDisplayName(deviceName)
